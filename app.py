@@ -12,7 +12,7 @@ pages = FlatPages(app)
 @app.route('/')
 def index():
     # Render the index.md as the homepage
-    page = pages.get('index')  # Get the 'index.md' page
+    page = pages.get('index')  # Fetch the 'index.md' page
     return render_template('page.html', page=page)
 
 
