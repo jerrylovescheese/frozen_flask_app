@@ -1,0 +1,166 @@
+<!-- templates/page.html -->
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="./static/jquery-3.7.1.js"></script>
+    <script>
+        $(function () {
+            $("#b-more").click(function () {
+                $("#cup").toggleClass("active");
+                $("#basic").toggleClass("active");
+            });
+        });
+        $(function () {
+            $("#header-collapse-button").click(function () {
+                $("#header-unit").toggleClass("active");
+                $("#content-unit").toggleClass("active");
+            });
+        });
+        // Ensure the DOM is fully loaded before running the script
+        $(document).ready(function () {
+            // Get the title of the document
+            var title = $(document).attr("title");
+            // Display the title inside an element with id 'titleDisplay'
+            $("#titleDisplay").text(title);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="basic">
+        <div id="basic-text-container">
+            <a href="https://jerryly.top">
+                <div id="b-info"></div>
+            </a>
+            <div id="b-more"><b><i class="fas fa-chevron-right"></i>&emsp;<span id="titleDisplay"></span></b></div>
+            <div class="b-style"><a href="#">to top</a></div>
+            <div class="b-style"><a href="./clock.html">clock</a></div>
+            <div class="b-style"><a href="./aluminum_studio.html">about</a></div>
+        </div>
+        <div id="cup">
+            <div id="water">
+                <a href="./apple.html">
+                    <span id="water-head">9:41</span>
+                </a>
+                <ul id="water-list">
+                    <a href="./develop.html">
+                        <li>Developer</li>
+                    </a>
+                </ul>
+                <a href="./music.html">
+                    <span id="water-head">music</span>
+                </a>
+                <ul id="water-list">
+                    <a href="./taylorswift.html">
+                        <li>Taylor Swift</li>
+                    </a>
+                    <a href="./subpages/1989tv.html">
+                        <li>1989 (Taylor's Version)</li>
+                    </a>
+                    <a href="./subpages/lover.html">
+                        <li>Lover</li>
+                    </a>
+                    <a href="./subpages/midnights.html">
+                        <li>Midnights</li>
+                    </a>
+                    <a href="./subpages/ttpd.html">
+                        <li>The Tortured Poets Department</li>
+                    </a>
+                </ul>
+                <span id="water-head">other stuff</span>
+                <ul id="water-list">
+                    <a href="./aluminum_studio.html">
+                        <li>About</li>
+                    </a>
+                    <a href="./blog_preview.html">
+                        <li>Blog</li>
+                    </a>
+                    <a href="./christmas.html">
+                        <li>Christmas (closed for now)</li>
+                    </a>
+                    <a href="./classical_ch_sh.html">
+                        <li>部编版高中语文古文合集</li>
+                    </a>
+                    <a href="./classical_ch.html">
+                        <li>部编版初中语文古文合集</li>
+                    </a>
+                    <a href="./clock.html">
+                        <li>Clock</li>
+                    </a>
+                    <a href="./contact.html">
+                        <li>Contact</li>
+                    </a>
+                    <a href="./friends.html">
+                        <li><i>Friends</i></li>
+                    </a>
+                    <a href="./gallery.html">
+                        <li>Gallery</li>
+                    </a>
+                    <a href="./noticeboard.html">
+                        <li>Noticeboard</li>
+                    </a>
+                    <a href="./search.html">
+                        <li>Search (deprecated)</li>
+                    </a>
+                    <a href="./survey.html">
+                        <li>Survey</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="header-collapse">
+        <div id="header-collapse-button">
+            <i class="fa-solid fa-square-caret-left"></i>&emsp13;&emsp13;导航器
+        </div>
+    </div>
+
+    <!-- Content -->
+    <main>
+        
+<h2>Home</h2>
+<div>
+    <h1>Welcome to My Frozen Flask Site!</h1>
+<p>This is the home page created using Markdown.</p>
+<p>Here you can add your content, links, images, etc.</p>
+<p>Happy</p> <!-- Renders the Markdown content as HTML -->
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="copyright-info">
+        <p class="copyright-info">
+            想帮忙？有想法或建议？欢迎给
+            <a href="mailto:jerrylovesapple@icloud.com">jerrylovesapple@icloud.com</a>
+            发一封邮件。<br>
+        </p>
+        <p class="copyright-info">
+            版权所有 © aluminum.studio
+            <a id="my-page" href="http://jerrylovescheese.github.io/web/pages/aluminum_studio.html">
+                江源工作室 <i class="fas fa-arrow-right"></i>
+            </a>
+        </p>
+        <p class="copyright-info">
+            <a href="javascript:;" onclick="alert('Currently no items in test. Stay tuned!')">
+                <i class="fas fa-flask"></i>&emsp13;
+                实验室
+            </a>
+            &emsp;
+            <a href="https://blog.jerryly.top/2024/04/04/legal-statement.html">
+                <i class="fa-solid fa-scale-balanced"></i>&emsp13;
+                法律声明
+            </a>
+        </p>
+    </footer>
+</body>
+
+</html>
