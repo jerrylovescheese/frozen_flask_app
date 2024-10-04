@@ -3,6 +3,10 @@
 
 {% block title %}{{ page.meta.title }}{% endblock %}
 
+{% if page.path == 'index' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endif %}
+
 {% block content %}
 <h2>{{ page.meta.title }}</h2>
 <div>
