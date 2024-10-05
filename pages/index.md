@@ -1,12 +1,10 @@
 title: Home
 date: 2024-10-03
 
-# Welcome to My Frozen Flask Site!
+# Welcome to My Blog!
 
-This is the home page created using Markdown.
+As its domain name suggests, this website is different from [https://jerryly.top](https://jerryly.top) in that it contains my blog.
 
-Here you can add your content, links, images, etc.
+I used a different structure and Frozen Flask for this so that typing plain texts and publishing them can be easier.
 
-Happy or not
-
-Fuck it, I love you
+### Recent blogs
