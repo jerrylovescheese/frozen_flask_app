@@ -1,0 +1,9 @@
+# Ignore everything
+
+
+# Except the build directory
+!/build
+
+# Ignore everything inside build, but not its contents
+/build/*
+!/build/**/*
