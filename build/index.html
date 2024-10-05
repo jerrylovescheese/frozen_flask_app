@@ -1,3 +1,4 @@
+<!-- templates/page.html -->
 <!-- templates/layout.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -5,10 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Site{% endblock %}</title>
-    <script src="{{ url_for('static', filename='js/jquery-3.7.1.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}">
+    <title>Home</title>
+    <script src="/static/js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/fontawesome/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charter-webfont@4/charter.min.css" />
     <script>
         $(function () {
@@ -51,7 +52,7 @@
             <div id="water">
                 <span id="water-head">Jerry's blog</span>
                 <ul id="water-list">
-                    <a href="{{ url_for('page', path='blog_oct_4_2024') }}">
+                    <a href="/blog_oct_4_2024/">
                         <li>On October 4</li>
                     </a>
                 </ul>
@@ -67,8 +68,18 @@
 
     <!-- Content -->
     <main>
-        {% block content %}
-        {% endblock %}
+        
+<h2>Home</h2>
+<div>
+    <h1>Welcome to My Blog!</h1>
+<p>As its domain name suggests, this website is different from <a href="https://jerryly.top">https://jerryly.top</a> in that it contains my blog.</p>
+<p>I used a different structure and Frozen Flask for this so that typing plain texts and publishing them can be easier.</p>
+<h3>Recent blogs</h3>
+<ul>
+<li><a href="blog_oct_4_2024">Blog Post 1</a></li>
+</ul> <!-- Renders the Markdown content as HTML -->
+</div>
+
     </main>
 
     <!-- Footer -->

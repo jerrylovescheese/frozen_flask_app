@@ -1,0 +1,11 @@
+<!-- templates/page.html -->
+{% extends 'layout.html' %}
+
+{% block title %}{{ page.meta.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ page.meta.title }}</h2>
+<div>
+    {{ page.html | safe }} <!-- Renders the Markdown content as HTML -->
+</div>
+{% endblock %}
