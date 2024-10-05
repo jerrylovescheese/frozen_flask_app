@@ -9,7 +9,6 @@
     <title>Home</title>
     <script src="./static/js/jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="./static/css/style.css">
-    <link rel="stylesheet" href="./static/css/index.css">
     <link rel="stylesheet" href="./static/fontawesome/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charter-webfont@4/charter.min.css" />
     <script>
@@ -79,9 +78,7 @@
                 be easier.</p>
             <h3>Recent blogs</h3>
             <ul>
-                {% for blog in blogs %}
-                <li><a href="{{ url_for('static', filename='blogs/' + blog['filename']) }}">{{ blog['title'] }}</a></li>
-                {% endfor %}
+                <li><a href="./pages/blog_oct_4_2024.md">blog_oct_4_2024</a></li>
             </ul>
             <!-- Renders the Markdown content as HTML -->
         </div>
