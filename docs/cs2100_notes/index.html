@@ -1,0 +1,548 @@
+<!-- templates/page.html -->
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 2100 Notes</title>
+    <script src="/static/js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charter-webfont@4/charter.min.css" />
+    <script>
+        $(function () {
+            $("#b-more").click(function () {
+                $("#cup").toggleClass("active");
+                $("#basic").toggleClass("active");
+            });
+        });
+        $(function () {
+            $("#header-collapse-button").click(function () {
+                $("#header-unit").toggleClass("active");
+                $("#content-unit").toggleClass("active");
+            });
+        });
+        // Ensure the DOM is fully loaded before running the script
+        $(document).ready(function () {
+            // Get the title of the document
+            var title = $(document).attr("title");
+            // Display the title inside an element with id 'titleDisplay'
+            $("#titleDisplay").text(title);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="basic">
+        <div id="basic-text-container">
+            <a href="https://jerryly.top">
+                <div id="b-info"></div>
+            </a>
+            <a href="https://blog.jerryly.top">
+                <div class="b-style"><i class="fas fa-chevron-right"></i>&emsp;blog</div>
+            </a>
+            <div id="b-more"><b><i class="fas fa-chevron-right"></i>&emsp;<span id="titleDisplay"></span></b></div>
+            <div class="b-style"><a href="#">to top</a></div>
+            <div class="b-style"><a href="https://jerryly.top/pages/aluminum_studio.html">about</a></div>
+        </div>
+        <div id="cup">
+            <div id="water">
+                <span id="water-head">blogs in 2024</span>
+                <ul id="water-list">
+                    <a href="/blog_oct_4_2024/">
+                        <li>On October 4, 2024</li>
+                    </a>
+                    <a href="/2024-06-04-visa-appointment-walk-through/">
+                        <li>On June 4, 2024</li>
+                    </a>
+                    <a href="/2024-04-04-legal-statement/">
+                        <li>On April 4, 2024</li>
+                    </a>
+                </ul>
+                <span id="water-head">notes</span>
+                <ul id="water-list">
+                    <a href="/cs2100_notes/">
+                        <li>Data Structure & Analysis</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main>
+        
+<h2>CS 2100 Notes</h2>
+<div>
+    <h2>CS2100 Lecture Notes</h2>
+<h3>Week 2</h3>
+<p>8 types</p>
+<ul>
+<li>byte MAX_VALUE: 127</li>
+<li>short</li>
+<li>int defaults to 0</li>
+<li>long</li>
+<li>float not used unless user specifies and wants to save space by doing so</li>
+<li>double</li>
+<li>boolean defaults to false</li>
+<li>char defaults to "null character" (not the same as null)</li>
+</ul>
+<p>reference</p>
+<ul>
+<li>the memory is storing a memory address</li>
+<li>using new to be created is an object references</li>
+<li>static vs heap</li>
+<li>to use input, we use scanner objects</li>
+</ul>
+<p>Scanner is a conveyor belt</p>
+<p>PRIMITIVE</p>
+<ul>
+<li>camelCase</li>
+<li>cannot be null, defaults to values listed above</li>
+<li>double cannot be compared with "=="</li>
+<li>stored on the memory stack, passing by value</li>
+</ul>
+<p>REFERENCE</p>
+<ul>
+<li>TitleCase</li>
+<li>can be null</li>
+<li>reference compared with .equals()</li>
+<li>on the memory stack is the reference to locate the object on the memory heap (because we</li>
+<li>don't know how big it's going to be)</li>
+</ul>
+<p>when have a null, pointed to bootstrap location
+bootstrap is a location that's activated after booting system
+NullPointerException</p>
+<p>Predetermined packages</p>
+<ul>
+<li>String</li>
+<li>Random</li>
+<li>Math</li>
+</ul>
+<p>to get these class, use an import statement</p>
+<ul>
+<li>java.lang: basic functionality</li>
+<li>java.awt: graphics classes</li>
+<li>java.swing: too old</li>
+<li>java.text.*; import everything in text package</li>
+</ul>
+<p>only 4 ways to control a program</p>
+<ol>
+<li>sequence (line 1 -&gt; 2 -&gt; 3 -&gt; ...)</li>
+<li>conditional statement (if, else, switch statement)</li>
+<li>loops</li>
+</ol>
+<p>"y = x++" is different from "y = ++x",</p>
+<ul>
+<li>the former gives y the old value,</li>
+<li>the latter gives the incremented value</li>
+</ul>
+<p>do while is used for data validation</p>
+<ul>
+<li>hint users to input numbers or program won't proceed</li>
+</ul>
+<p>Strings come from a string pool, Java minimizes the string they have to allocate</p>
+<h3>Week 3</h3>
+<p>Comparison</p>
+<ul>
+<li>"has-a" relationship</li>
+</ul>
+<p>Inheritance</p>
+<ul>
+<li>"is-a" relationship</li>
+<li>everything inherits from object</li>
+<li>every method in object can also be found in its descendants<ul>
+<li>.toString()</li>
+<li>.equals() - compare address</li>
+<li>.clone()</li>
+<li>.hashCode() - unique identifier</li>
+</ul>
+</li>
+</ul>
+<p>Object provides the default constructor</p>
+<ul>
+<li>no arguments</li>
+<li>allocates memory</li>
+<li>has a default constructor</li>
+<li>if you're writing a constructor the default one automatically expires, so you have to write a new one yourself</li>
+</ul>
+<p>.equals()</p>
+<ul>
+<li>reflexive</li>
+<li>symmetric</li>
+<li>transitive</li>
+<li>side note: hahaha please this is so equivalence relation coded</li>
+</ul>
+<p>How to write an equal method yourself</p>
+<ul>
+<li>Override using exact same format!</li>
+<li><code>java
+  public boolean equals(Object obj) {
+  }</code></li>
+<li>compare to ensure it's not null</li>
+<li>if argument is the current object, return true</li>
+<li>check type using <code>.instanceOf()</code></li>
+<li>recast the argument to current class <code>(CurrentClass) Object</code></li>
+<li>compare the actual data<ul>
+<li>== primitive</li>
+<li>.equals() reference</li>
+</ul>
+</li>
+</ul>
+<p>Inheritance</p>
+<ul>
+<li>Inheritance is a mechanism by which one class acquires the properties of another class</li>
+<li>Don’t repeat yourself</li>
+<li>Declaring fields as private reserves encapsulation</li>
+<li>Subclass methods call superclass methods to set the values of the fields and the superclass methods enforce the
+  validation rules for the data</li>
+<li>But calling methods incur processing overhead</li>
+<li>Declaring fields as protected allows them to be accessed directly by subclasses</li>
+<li>Classes outside the hierarchy and package must use accessors and mutators for protected fields</li>
+<li>Define protected fields only when high performance is necessary</li>
+<li>Subclasses extend superclasses</li>
+<li>Subclasses inherit from superclasses</li>
+<li>Java only supports one direct parent</li>
+</ul>
+<h3>Week 5</h3>
+<p>Substitutability Principle</p>
+<ul>
+<li>A child class is a more specific class</li>
+<li>A Character is a kind of Object</li>
+<li>A Mage is a kind of Character</li>
+<li>If an Object is required, a Character is accepted</li>
+<li>If an Object is required, a Mage is accepted</li>
+<li>If a Character is required, a Mage is accepted</li>
+<li>If a Mage is required, a Character is not accepted!</li>
+<li><code>Integer</code>wraps up an integer and makes it an object of <code>int</code></li>
+</ul>
+<p>Polymorphism requirements</p>
+<ul>
+<li>the classes are in the same hierarchy</li>
+<li>all subclasses override the same method</li>
+<li>a subclass object reference is assigned to a superclass object reference.</li>
+<li>the superclass object reference is used to call the method.</li>
+</ul>
+<p>An example of abstract class</p>
+<p><code>Java
+/* public or private */ abstract class ClassName {
+// class body
+}</code></p>
+<p>Interface (接口)</p>
+<p>```Java
+public interface TimeKeeper {
+    public int getTime();</p>
+<pre><code>public int setTime();
+</code></pre>
+<p>}
+```</p>
+<ul>
+<li>assignment Blackjack releases tomorrow</li>
+<li>Soccer due today</li>
+<li>Interface</li>
+<li>Introducing List</li>
+</ul>
+<p>An interface is an agreed-upon means of connection between classes</p>
+<ul>
+<li>using standardized plugs and outlets allows reuse of the power network by any electrical device</li>
+<li>defining an interface in Java allows validation of methods specified in an interface, allowing reuse of algorithms and
+  code</li>
+<li>interfaces promote loose-coupling, not an inheritance relationship</li>
+<li>a class can inherit directly from only one class, <code>extend</code> only one class</li>
+<li><code>interface</code> allows a class to inherit behavior from multiple sources</li>
+<li>an interface typically specifies behavior that a class will implement</li>
+</ul>
+<p>Using (implementing) interfaces</p>
+<ul>
+<li>interfaces are not instantiated as objects, but provide a contract between classes</li>
+<li><code>Java
+  public class Watch implements TimeKeeper{
+  }</code></li>
+<li>abstract means no implementation of methods, interface is just implementing behavior, can't have instance data</li>
+</ul>
+<p>Polymorphism via interfaces</p>
+<ul>
+<li><code>Java
+  Speaker current;</code></li>
+<li>the <code>current</code> reference can be pointed to any object of any class that implements the <code>Speaker</code> interface</li>
+</ul>
+<p>Standard Java interfaces</p>
+<ul>
+<li><code>compareTo</code></li>
+</ul>
+<p>Interface hierarchies</p>
+<p>Comparable interface</p>
+<ul>
+<li>defined the natural ordering of objects in class (i.e. default)</li>
+</ul>
+<p>Implementing comparable</p>
+<ul>
+<li><code>Java
+  public int compareTo(T o){
+    // match the type in the class header
+  }</code></li>
+<li><code>Java
+  public interface Comparable&lt;T&gt;{
+    // compare this object to other
+    public int compareTo(T other);
+  }</code></li>
+</ul>
+<p>Comparator</p>
+<ul>
+<li>implement compare outside the class and takes two arguments</li>
+</ul>
+<p>Function objects</p>
+<ul>
+<li>implements a specified interface</li>
+<li>the one method in that interfaces does the needed work</li>
+</ul>
+<p>Comparator</p>
+<ul>
+<li>comparator interface provides a way to externally compare two objects</li>
+<li>works similar to <code>compareTo()</code></li>
+<li><code>Collections.sort(arrayListOfRacingDonkeys, new SortByWeight());</code></li>
+</ul>
+<p>Implementing Comparators</p>
+<p>```Java
+import java.util.Comparator;</p>
+<p>public class CmpDogByBreedAndName implements Comparator<Dog> {
+    public int compare(Dog d1, Dog d2) {
+        /<em> Customized comparator </em>/
+        int retval = d1.getBreed().compareTo(d2.getBreed());
+        if (retval != 0) {
+            return retval;
+        }
+        /<em> String's default compareTo method </em>/
+        return d1.getName().compareTo(d2.getName);
+    }
+}
+```</p>
+<p>KEY POINT</p>
+<ul>
+<li><b>Comparable</b> uses natural sorting</li>
+<li><b>Comparator</b> uses customized sorting</li>
+</ul>
+<p><b>Abstract class</b> - what a class is, what kind of data is stored<br>
+<b>Interface</b> - what it can do</p>
+<h3>Week 6</h3>
+<p>Frameworks</p>
+<ul>
+<li>reusable OO software / code components</li>
+<li>set of classes developed by someone else</li>
+<li>partially complete</li>
+<li>a unified texture, works together, seamless, common interface</li>
+<li>e.g.: Java Collections</li>
+</ul>
+<p>Java Collections Framework (JCF)</p>
+<ul>
+<li>data structures and abstract data types</li>
+<li>ADT: specification, what can it store, what are the implementations</li>
+<li>DS: implementation, how to implement in memory and operations, and what's the performance of the operations</li>
+<li>ADT examples:<ul>
+<li>list<ul>
+<li>ArrayList</li>
+<li>LinkedList</li>
+</ul>
+</li>
+<li>set</li>
+<li>map</li>
+</ul>
+</li>
+</ul>
+<p>Collection interface</p>
+<ul>
+<li>generic class</li>
+<li><code>Java
+  import java.util.Collection;
+  import java.util.Iterator;   
+  public interface Collection&lt;E&gt; {
+    public boolean add(E obj);
+    public Iterator iterator();
+    public int size();
+    public boolean isEmpty();
+    public boolean contains(E obj);
+    public boolean containsAll(Collection other);
+  }</code></li>
+</ul>
+<p>List interface</p>
+<p>```Java
+import java.util.Collection;</p>
+<p>public interface List<E> extends Collection<E> {
+    public boolean add(int index, E obj);</p>
+<pre><code>public E get(int index);
+
+public int indexOf(E obj);
+
+public boolean remove(int index);
+
+public E set(int index, E obj);
+
+List&lt;E&gt; subList(int from, int to); /* Not suggested */
+</code></pre>
+<p>}
+```</p>
+<p>Implementing a List using ArrayList (time complexities)</p>
+<ul>
+<li>create(empty) O(1) constant</li>
+<li>insert at end O(1)</li>
+<li>insert at beginning O(n)</li>
+<li>remove at end O(1)</li>
+<li>remove at beginning O(n)</li>
+<li>find - true O(n/2)</li>
+<li>find - false O(n)</li>
+</ul>
+<p>Vectors</p>
+<ul>
+<li>a type of list</li>
+<li>keep things in order</li>
+<li>always random access (can get to what we want directly and does not need to go through everything before it)</li>
+<li>a "resizable array" - stores data in an array but hides the need to resize<ul>
+<li>maintains a "capacity" // how many spaces</li>
+<li>maintains a "capacityIncrement" // how much to grow or shrink when required</li>
+</ul>
+</li>
+<li>resizes as necessary as items are added</li>
+<li>concrete classes provided by Java are the ArrayList and Vector classes</li>
+</ul>
+<p>Vector performance</p>
+<ul>
+<li>final sequence of items such that given any index the item in that index can be modified at constant time (the same
+  amount of time regardless of how many items are there)</li>
+<li>insertion or deletion at the back of sequence takes only constant time on average</li>
+<li>have to resize? takes more time</li>
+</ul>
+<p>Vectors are a generic data type</p>
+<p>```Java
+import java.util.ArrayList;
+import java.util.Vector;</p>
+<p>Vector<Integer> list1 = new Vector<Integer>();
+ArrayList<Double> list2 = new Vector<Double>();
+```</p>
+<p>A size value stores the number of data elements - always &lt;= capacity</p>
+<p>Generic type (泛型)</p>
+<ul>
+<li>a generic class or interface that is parameterized over types</li>
+<li><code>Java
+  import java.util.ArrayList;   
+  ArrayList&lt;T&gt; arrlist = new ArrayList&lt;&gt;();</code></li>
+</ul>
+<p>Generics ensure type safety</p>
+<ul>
+<li>without generics, the compiler would happily allow any type into <code>ArrayList&lt;Object&gt;</code> with <code>Object</code> being
+  anything</li>
+<li>generics can be type-specific and type-safe</li>
+</ul>
+<p>```Java
+import java.util.List;</p>
+<p>public class ArrayList<E> extends AbstractList<E> implements List<E> {</p>
+<p>}
+```</p>
+<p>```Java
+import java.util.ArrayList;</p>
+<p>public static <T extends Comparable\<T> T> largestValue(ArrayList<T> arrList) {</p>
+<p>}
+```</p>
+<p>```Java
+import java.util.LinkedList;</p>
+<p>LinkedList<E>;
+```</p>
+<p>Abstract Model of a List Object</p>
+<ul>
+<li>add</li>
+<li>get</li>
+<li>indexOf</li>
+<li>remove</li>
+<li>set sublist</li>
+<li>size</li>
+<li>clear</li>
+<li>insertAtHead</li>
+<li>insertAtTail</li>
+<li>insertAt</li>
+<li>removeAtHead</li>
+<li>removeAtTail</li>
+</ul>
+<p><code>LinkedList</code></p>
+<ul>
+<li>arrays allocate contiguous memory for data/objects</li>
+<li>vectors use the same approach, based on arrays</li>
+<li>LinkedLists connect data/objects by means of references</li>
+<li>the list class has a head, where the list starts</li>
+<li>each node links to a subsequent node</li>
+<li>to find an element</li>
+</ul>
+<p>How <code>LinkedList</code> works</p>
+<p><code>Java
+head =0;
+tail =0;</code></p>
+<p>Node</p>
+<ul>
+<li>a node contains:<ul>
+<li>a data item</li>
+<li>one or more links</li>
+</ul>
+</li>
+<li>a link is a pointer to a list node</li>
+<li>the node class is usually defined in another class</li>
+</ul>
+<p>Node class</p>
+<p>```Java
+public class ListNode<T> {
+    /<em> Data being stored in this node </em>/
+    private T data;
+    /<em> reference to the next node in the list </em>/
+    protected ListNode<T> next;</p>
+<pre><code>public ListNode(T data) {
+    this.data = data;
+    this.next = null;
+}
+
+/* getter */
+public T getData() {
+    return this.data;
+}
+</code></pre>
+<p>}
+```</p>
+<p>Other types of LinkedLists
+- doubly linked
+- circular doubly linked
+- ...</p>
+<p>Doubly linked list
+- have another pointer besides next - prev</p>
+<p>Inserting a node into a single Linked List</p>
+<p>```Java
+import org.w3c.dom.Node;</p>
+<p>Node bob = new Node("bob");
+bob.next = harry.next;
+harry.next = bob;
+```</p>
+<p>Iterator
+- an iterator is an object that provides a means of processing a collection of objects one at a time
+- </p> <!-- Renders the Markdown content as HTML -->
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="copyright-info">
+        <p class="copyright-info">
+            Feel free to mail any suggestions on this site to
+            <a href="mailto:jerrylovesapple@icloud.com">jerrylovesapple@icloud.com</a>.<br>
+        </p>
+        <p class="copyright-info">
+            <a id="my-page" href="http://jerryly.top/pages/aluminum_studio.html">
+                © aluminum.studio 江源工作室 <i class="fas fa-arrow-right"></i>
+            </a>
+            &emsp;
+            <a href="https://blog.jerryly.top/2024/04/04/legal-statement.html">
+                <i class="fa-solid fa-scale-balanced"></i>&emsp13;
+                Legal
+            </a>
+        </p>
+    </footer>
+</body>
+
+</html>
