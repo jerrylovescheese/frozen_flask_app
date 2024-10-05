@@ -1,0 +1,99 @@
+<!-- templates/page.html -->
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <script src="/static/js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charter-webfont@4/charter.min.css" />
+    <script>
+        $(function () {
+            $("#b-more").click(function () {
+                $("#cup").toggleClass("active");
+                $("#basic").toggleClass("active");
+            });
+        });
+        $(function () {
+            $("#header-collapse-button").click(function () {
+                $("#header-unit").toggleClass("active");
+                $("#content-unit").toggleClass("active");
+            });
+        });
+        // Ensure the DOM is fully loaded before running the script
+        $(document).ready(function () {
+            // Get the title of the document
+            var title = $(document).attr("title");
+            // Display the title inside an element with id 'titleDisplay'
+            $("#titleDisplay").text(title);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="basic">
+        <div id="basic-text-container">
+            <a href="https://jerryly.top">
+                <div id="b-info"></div>
+            </a>
+            <a href="https://blog.jerryly.top">
+                <div class="b-style"><i class="fas fa-chevron-right"></i>&emsp;blog</div>
+            </a>
+            <div id="b-more"><b><i class="fas fa-chevron-right"></i>&emsp;<span id="titleDisplay"></span></b></div>
+            <div class="b-style"><a href="#">to top</a></div>
+            <div class="b-style"><a href="https://jerryly.top/pages/aluminum_studio.html">about</a></div>
+        </div>
+        <div id="cup">
+            <div id="water">
+                <span id="water-head">Jerry's blog</span>
+                <ul id="water-list">
+                    <a href="/blog_oct_4_2024/">
+                        <li>On October 4</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="header-collapse">
+        <div id="header-collapse-button">
+            <i class="fa-solid fa-square-caret-left"></i>&emsp13;&emsp13;导航器
+        </div>
+    </div>
+
+    <!-- Content -->
+    <main>
+        
+<h2>Blog</h2>
+<div>
+    <h1>blog post on Oct 4 2024</h1>
+<p>Hi guys!</p> <!-- Renders the Markdown content as HTML -->
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="copyright-info">
+        <p class="copyright-info">
+            Feel free to mail any uggestions on this site to
+            <a href="mailto:jerrylovesapple@icloud.com">jerrylovesapple@icloud.com</a>.<br>
+        </p>
+        <p class="copyright-info">
+            <a id="my-page" href="http://jerryly.top/pages/aluminum_studio.html">
+                © aluminum.studio 江源工作室 <i class="fas fa-arrow-right"></i>
+            </a>
+            &emsp;
+            <a href="https://blog.jerryly.top/2024/04/04/legal-statement.html">
+                <i class="fa-solid fa-scale-balanced"></i>&emsp13;
+                Legal
+            </a>
+        </p>
+    </footer>
+</body>
+
+</html>
