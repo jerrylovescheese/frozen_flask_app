@@ -8,3 +8,5 @@ As its domain name suggests, this website is different from [https://jerryly.top
 I used a different structure and Frozen Flask for this so that typing plain texts and publishing them can be easier.
 
 ### Recent blogs
+
+- [Blog Post 1](blog_oct_4_2024)
